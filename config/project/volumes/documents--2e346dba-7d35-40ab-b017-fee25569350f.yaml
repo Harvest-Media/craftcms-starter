@@ -1,0 +1,15 @@
+fieldLayouts:
+  f18bd3e8-6bcf-4d7b-ab68-e976997962b7:
+    tabs:
+      -
+        name: Content
+        sortOrder: 1
+handle: documents
+hasUrls: true
+name: Documents
+settings:
+  path: media/docs/
+  url: /media/docs/
+sortOrder: 5
+type: craft\volumes\Local
+url: null

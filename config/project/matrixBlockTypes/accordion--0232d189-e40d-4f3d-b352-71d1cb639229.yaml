@@ -1,0 +1,73 @@
+field: b3e1c9f3-7e40-4ec9-9d9d-96fa163a671c
+fieldLayouts:
+  6e4b3499-ce71-4818-bce3-579d2965f6bc:
+    tabs:
+      -
+        fields:
+          03e42f18-b977-48f9-944b-95702fd19b39:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  03e42f18-b977-48f9-944b-95702fd19b39:
+    contentColumnType: text
+    fieldGroup: null
+    handle: accordionText
+    instructions: ''
+    name: 'Accordion Text'
+    searchable: true
+    settings:
+      addRowLabel: 'Add a row'
+      columnType: text
+      columns:
+        __assoc__:
+          -
+            - col1
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Heading
+                -
+                  - handle
+                  - heading
+                -
+                  - width
+                  - 30%
+                -
+                  - type
+                  - singleline
+          -
+            - col2
+            -
+              __assoc__:
+                -
+                  - heading
+                  - Body
+                -
+                  - handle
+                  - body
+                -
+                  - width
+                  - ''
+                -
+                  - type
+                  - multiline
+      defaults:
+        -
+          __assoc__:
+            -
+              - col1
+              - ''
+            -
+              - col2
+              - ''
+      maxRows: ''
+      minRows: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Table
+handle: accordion
+name: Accordion
+sortOrder: 9

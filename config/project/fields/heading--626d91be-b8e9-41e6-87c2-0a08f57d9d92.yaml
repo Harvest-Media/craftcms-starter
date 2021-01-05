@@ -1,0 +1,17 @@
+contentColumnType: text
+fieldGroup: 7025c78b-3031-405b-9845-6889983aae90
+handle: heading
+instructions: 'If you would like a different heading on the page than the navigation title above, add it here.'
+name: 'Alternate Heading'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

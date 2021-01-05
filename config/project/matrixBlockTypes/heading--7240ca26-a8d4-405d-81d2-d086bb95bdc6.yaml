@@ -1,0 +1,104 @@
+field: b3e1c9f3-7e40-4ec9-9d9d-96fa163a671c
+fieldLayouts:
+  809d3220-659e-412f-9cd8-32cbd7966cb1:
+    tabs:
+      -
+        fields:
+          f2d42740-37fa-4bd4-8485-18aca3ab0bd7:
+            required: false
+            sortOrder: 2
+          fe5aa513-4011-41dc-b3c4-f6398009232d:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  f2d42740-37fa-4bd4-8485-18aca3ab0bd7:
+    contentColumnType: string
+    fieldGroup: null
+    handle: headingLevel
+    instructions: ''
+    name: Level
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - 'Heading 2'
+            -
+              - value
+              - h2
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Heading 3'
+            -
+              - value
+              - h3
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Heading 4'
+            -
+              - value
+              - h4
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Heading 5'
+            -
+              - value
+              - h5
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - 'Heading 6'
+            -
+              - value
+              - h6
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  fe5aa513-4011-41dc-b3c4-f6398009232d:
+    contentColumnType: text
+    fieldGroup: null
+    handle: headingText
+    instructions: ''
+    name: 'Heading Text'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: heading
+name: Heading
+sortOrder: 1

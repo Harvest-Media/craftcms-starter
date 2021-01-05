@@ -1,0 +1,39 @@
+{% extends "_layouts/default" %}
+
+{% block main %}
+
+	{{ entry.body }}
+	{% include '_partials/contentBlocks' %}
+
+{% endblock %}
+
+{% block belowMain %}
+
+	{% if entry.level == 1%}
+
+	{% set parent = craft.entries.section('pages').slug(craft.app.request.getSegment(1)).one() %}
+	{% if parent %}
+
+		{% set subnav = parent.getDescendants(1).with(['headerImage']).all() %}
+		{% if subnav|length %}
+			<h2 class="tw-text-center tw-text-3xl tw-mb-6 tw-font-sans tw-font-bold tw-uppercase tw-tracking-wide">In This Section</h2>
+			<div class="grid-x grid-padding-x grid-padding-y small-up-1 medium-up-2 large-up-2 tw-mb-12">
+			{% for page in subnav %}
+			<div class="cell">
+				<a href="{{ page.url }}" class="tw-block tw-text-sm md:tw-text-xs">
+					<span class="tw-relative tw-flex tw-items-center tw-justify-center tw-z-0 tw-w-full tw-h-48 md:tw-h-36 tw-bg-gray-100">
+						<span class="tw-relative tw-z-10 tw-p-2 tw-bg-white tw-uppercase tw-min-w-2/3 tw-text-center">{{ page.title }}</span>
+						{% if page.headerImage|length %}<span class="tw-absolute tw-w-full tw-h-full tw-left-0 tw-top-0 tw-bg-center tw-bg-cover tw-bg-no-repeat tw-z-0" style="background-image: url('{{ page.headerImage[0].url('contentCardThumbnail') }}');"></span>{% endif %}
+					</span>
+				</a>
+			</div>
+			{% endfor %}
+			</div>
+		{% endif %}
+	{% endif %}
+
+
+
+	{% endif %}
+
+{% endblock %}

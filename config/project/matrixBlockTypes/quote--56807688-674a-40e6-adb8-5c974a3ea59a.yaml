@@ -1,0 +1,59 @@
+field: b3e1c9f3-7e40-4ec9-9d9d-96fa163a671c
+fieldLayouts:
+  c35739eb-ee96-41de-a07c-d53b24f46941:
+    tabs:
+      -
+        fields:
+          4527a1db-2ff4-49c8-8f1f-8d298cce5258:
+            required: false
+            sortOrder: 1
+          7ede2305-082e-43a6-8aa5-2c63a855e7b3:
+            required: false
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  4527a1db-2ff4-49c8-8f1f-8d298cce5258:
+    contentColumnType: text
+    fieldGroup: null
+    handle: quoteText
+    instructions: ''
+    name: 'Quote Text'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: ''
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  7ede2305-082e-43a6-8aa5-2c63a855e7b3:
+    contentColumnType: text
+    fieldGroup: null
+    handle: quoteAuthor
+    instructions: ''
+    name: Author
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: quote
+name: Quote
+sortOrder: 3

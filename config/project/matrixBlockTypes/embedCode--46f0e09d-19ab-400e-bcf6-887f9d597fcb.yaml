@@ -1,0 +1,33 @@
+field: b3e1c9f3-7e40-4ec9-9d9d-96fa163a671c
+fieldLayouts:
+  4c1d6786-b8aa-41ba-b7fd-5669d6da1f6d:
+    tabs:
+      -
+        fields:
+          4a5e3513-0e3e-488d-8226-daf88b86579e:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  4a5e3513-0e3e-488d-8226-daf88b86579e:
+    contentColumnType: text
+    fieldGroup: null
+    handle: embedCode
+    instructions: 'Paste your embed code here.'
+    name: 'Embed Code'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '6'
+      multiline: '1'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: embedCode
+name: 'Embed Code'
+sortOrder: 11

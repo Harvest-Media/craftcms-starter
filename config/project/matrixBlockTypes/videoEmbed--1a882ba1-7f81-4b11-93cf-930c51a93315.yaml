@@ -1,0 +1,33 @@
+field: b3e1c9f3-7e40-4ec9-9d9d-96fa163a671c
+fieldLayouts:
+  6e00d2ed-1a2e-4070-ba57-bed57de3acde:
+    tabs:
+      -
+        fields:
+          f3342e90-4231-4053-b78c-d9936038d02c:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  f3342e90-4231-4053-b78c-d9936038d02c:
+    contentColumnType: text
+    fieldGroup: null
+    handle: videoEmbedCode
+    instructions: 'Paste your video embed code here. Usually looks like <iframe>.....'
+    name: 'Video Embed Code'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '6'
+      multiline: '1'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: videoEmbed
+name: 'Video Embed'
+sortOrder: 10

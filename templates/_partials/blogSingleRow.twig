@@ -1,0 +1,29 @@
+{% import "_partials/imgMacros" as imgMacros %}
+
+<article>
+
+	{% if entry.image|length %}
+		<div class="">
+			<a href="{{ entry.url }}">
+				<img imgMacros.srcset(entry.image[0]) class="lazyload" alt="{{ entry.title }}">
+			</a>
+		</div>
+	{% endif %}
+
+	<h2 class=""><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+	<p class="">On {{ entry.postDate.format('F j, Y') }} </a> by {{entry.author}}</p>
+
+	<p>
+		{% if entry.preview is empty %}
+			{{ entry.body | chop(unit='w', limit=15, append='...') }}
+		{% else %}
+			{{ entry.preview }} &hellip;
+		{% endif %}
+		<a href="{{ entry.url }}">read more</a>
+	</p>
+
+	{% if not loop.last %}
+		<hr class="" />
+	{% endif %}
+
+</article>

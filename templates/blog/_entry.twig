@@ -1,0 +1,11 @@
+{% extends "_layouts/default" %}
+
+{% block main %}
+	<p class="tw-text-sm tw-italic tw-opacity-75">On {{ entry.postDate.format('F j, Y') }} by {{entry.author}}</p>
+	{{ entry.body }}
+	{% include '_partials/contentBlocks' %}
+{% endblock %}
+
+{% block sidebar %}
+	{% include '_partials/blogSidebarArchive' %}
+{% endblock %}

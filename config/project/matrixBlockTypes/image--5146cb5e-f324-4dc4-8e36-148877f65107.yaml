@@ -1,0 +1,293 @@
+field: b3e1c9f3-7e40-4ec9-9d9d-96fa163a671c
+fieldLayouts:
+  05211cbb-92d6-4528-a3cf-a6a9d8b29cab:
+    tabs:
+      -
+        fields:
+          41531fb7-c36b-4fca-ba83-8da488093316:
+            required: false
+            sortOrder: 4
+          8ebe90b3-8e91-46f9-96dc-06ff6f471a49:
+            required: false
+            sortOrder: 1
+          97e7ae49-b984-43a3-b5b6-4194bb89c4a4:
+            required: false
+            sortOrder: 3
+          a0d8ffcc-33b9-4947-9275-5c54f33e7d4a:
+            required: false
+            sortOrder: 5
+          d39c4b00-2221-4cae-ab8b-1780422617e0:
+            required: false
+            sortOrder: 2
+        name: Content
+        sortOrder: 1
+fields:
+  41531fb7-c36b-4fca-ba83-8da488093316:
+    contentColumnType: text
+    fieldGroup: null
+    handle: imageAltText
+    instructions: 'Hidden text for search engines.'
+    name: 'Alt Text'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  8ebe90b3-8e91-46f9-96dc-06ff6f471a49:
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: true
+    settings:
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:da05715e-f118-4c6e-b946-1b87d681d043'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      restrictFiles: '1'
+      selectionLabel: 'Choose Image'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+      singleUploadLocationSource: 'volume:da05715e-f118-4c6e-b946-1b87d681d043'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:9cd3f5a6-0ca2-4b63-bd42-1aed0168e5a2'
+        - 'volume:da05715e-f118-4c6e-b946-1b87d681d043'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: ''
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  97e7ae49-b984-43a3-b5b6-4194bb89c4a4:
+    contentColumnType: text
+    fieldGroup: null
+    handle: imageCaption
+    instructions: 'Add an optional caption.'
+    name: Caption
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  a0d8ffcc-33b9-4947-9275-5c54f33e7d4a:
+    contentColumnType: text
+    fieldGroup: null
+    handle: imageLinkit
+    instructions: ''
+    name: Link
+    searchable: true
+    settings:
+      allowCustomText: ''
+      allowTarget: '1'
+      defaultText: ''
+      selectLinkText: ''
+      types:
+        __assoc__:
+          -
+            - fruitstudios\linkit\models\Email
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Phone
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Url
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+                -
+                  - allowAlias
+                  - '1'
+                -
+                  - allowMailto
+                  - '1'
+                -
+                  - allowHash
+                  - '1'
+                -
+                  - allowPaths
+                  - '1'
+          -
+            - fruitstudios\linkit\models\Twitter
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Facebook
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Instagram
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\LinkedIn
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - customPlaceholder
+                  - ''
+          -
+            - fruitstudios\linkit\models\Entry
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - 'Select an entry'
+          -
+            - fruitstudios\linkit\models\Category
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+          -
+            - fruitstudios\linkit\models\Asset
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - '1'
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - 'Select an asset'
+          -
+            - fruitstudios\linkit\models\User
+            -
+              __assoc__:
+                -
+                  - enabled
+                  - ''
+                -
+                  - customLabel
+                  - ''
+                -
+                  - sources
+                  - '*'
+                -
+                  - customSelectionLabel
+                  - ''
+                -
+                  - userPath
+                  - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: fruitstudios\linkit\fields\LinkitField
+  d39c4b00-2221-4cae-ab8b-1780422617e0:
+    contentColumnType: boolean
+    fieldGroup: null
+    handle: imageBorder
+    instructions: 'When turned on, this image will be placed a box with a border.'
+    name: Border
+    searchable: true
+    settings:
+      default: '1'
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Lightswitch
+handle: image
+name: Image
+sortOrder: 6

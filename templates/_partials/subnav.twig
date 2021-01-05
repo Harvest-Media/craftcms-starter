@@ -1,0 +1,24 @@
+{% set parent = craft.entries.section('pages').slug(craft.app.request.getSegment(1)).one() %}
+
+{% if parent %}
+
+
+	{% set subnav = parent.getDescendants(1).all() %}
+
+	{% if subnav|length %}
+
+		<nav class="tw-hidden sm:tw-block tw-border-solid tw-border-gray-300 tw-border tw-p-4 tw-rounded-lg">
+			<p class="tw-font-sans tw-pb-2 tw-mb-2 tw-border-solid tw-border-gray-300 tw-border-0 tw-border-b tw-text-lg tw-text-gray-600 tw-uppercase"><span class="show-for-sr">Current Section:</span> {{ parent.title }}</p>
+
+			<ul class="tw-list-none tw-m-0 tw-p-0">
+				{% nav page in subnav %}
+					<li class="tw-block {% if entry is defined and (entry.id == page.id) %} current{% endif %}">
+						<a class="tw-block tw-py-2 tw-uppercase" href="{{page.url}}">{{page.title}}</a>
+					</li>
+				{% endnav %}
+			</ul>
+		</nav>
+
+	{% endif %}
+
+{% endif %}

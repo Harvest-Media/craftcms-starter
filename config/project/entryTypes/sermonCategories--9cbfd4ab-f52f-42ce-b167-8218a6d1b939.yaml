@@ -1,0 +1,21 @@
+fieldLayouts:
+  1446dd97-aef6-4735-acba-9afa533af8a8:
+    tabs:
+      -
+        elements:
+          -
+            instructions: null
+            label: Title
+            type: craft\fieldlayoutelements\EntryTitleField
+          -
+            fieldUid: ae5298d0-8399-442c-a5c6-5d45859b79af
+            required: false
+            type: craft\fieldlayoutelements\CustomField
+        name: Content
+        sortOrder: 1
+handle: sermonCategories
+hasTitleField: true
+name: 'Sermon Categories'
+section: be3de0b5-6469-4de4-a45f-7ca0c1324b4b
+sortOrder: 1
+titleFormat: ''

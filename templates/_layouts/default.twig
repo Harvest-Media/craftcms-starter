@@ -1,0 +1,254 @@
+{%- cacheflag flagged "content" globally using key craft.app.request.pathInfo ~ '/p' ~ craft.app.request.pageNum ~ '/q' ~ craft.app.request.getParam('q') if doNotCacheThisTemplate is not defined -%}{# {%- minify -%} #}
+{% import "_partials/imgMacros" as imgMacros %}
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+
+	{# Meta #}
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	{# Title and meta description inserted by SEOmatic plugin #}
+
+	{# Favicon and device icons - generate at http://realfavicongenerator.net #}
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="theme-color" content="#ffffff">
+
+	{# Web Fonts #}
+	{#
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+	<link href="https://fonts.googleapis.com" rel="stylesheet">
+	#}
+
+	{# CSS #}
+	<link href="/assets/css/theme.css{% if not craft.app.config.general.devMode %}?v={{now|date("U")}}{% endif %}" rel="stylesheet" type="text/css" media="screen">
+
+	{# - Other Page Specific Head Content ---------------------- #}
+	{% block headExtra %}{% endblock %}
+
+</head>
+
+<body>
+
+	{# - Off Canvas Wrapper for entire page ---------------------- #}
+	<div id="jsPageTop" class="off-canvas-wrapper">
+
+	{# - Off Canvas Nav (Foundation Off Canvas Plugin) ---------------------- #}
+	{% set navigation = craft.entries.section('pages').all() %}
+	<div id="jsOffCanvasNav" class="off-canvas position-right" data-off-canvas>
+
+		<div class="tw-pb-8">
+			<button type="button" class="close-button off-canvas-nav-close" data-close aria-label="Close Modal">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+
+		<div class="off-canvas-nav-wrapper">
+			<ul class="menu vertical accordion-menu tw-px-4 tw-y-8" data-accordion-menu data-submenu-toggle="true">
+				<li>
+					<a href="/" class="tw-py-4 tw-uppercase tw-text-gray-800">Home</a>
+				</li>
+				{% nav page in navigation %}
+					<li>
+						<a href="{{page.url}}" class="tw-py-4 tw-uppercase tw-text-gray-800">{{page.title}}</a>
+						{% ifchildren %}
+							<ul class="vertical menu nested">
+								{% children %}
+							</ul>
+						{% endifchildren %}
+					</li>
+				{% endnav %}
+			</ul>
+		</div>
+
+	</div>{# .off-canvas #}
+
+
+
+	{# - Off Canvas Page Content ---------------------- #}
+	<div class="tw-relative tw-z-0 tw-pt-20 off-canvas-content" data-off-canvas-content>
+
+
+		{# - Masthead ---------------------- #}
+		<header id="jsMastheadScroll" class="tw-fixed tw-z-50 tw-top-0 tw-left-0 tw-w-full tw-bg-white tw-border-solid tw-border-gray-300 tw-border-0 tw-border-b">
+
+			<div class="grid-x grid-padding-x grid-padding-y align-justify align-middle tw-h-20">
+
+				<div class="shrink cell">
+					<a href="{{ siteUrl }}" class="tw-block">
+						<svg class="tw-block tw-w-32 tw-h-auto md:tw-w-48 lg:tw-w-56" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1343.178 296.49"><path d="M205.1,66.4H106.255a35.49,35.49,0,0,0-35.893,35.893v98.845H46.426c-1.9,0-3.77-.625-4.416-1.895a5.749,5.749,0,0,1-1.9-4.417V42.464c0-1.9.625-3.771,1.9-4.416.625-1.25,2.521-1.9,4.416-1.9h152.36a5.709,5.709,0,0,1,4.417,1.9c1.25.625,1.9,2.52,1.9,4.416Zm53.515,0H234.679V42.463c0-20.144-16.373-36.518-35.893-36.518H46.426A36.549,36.549,0,0,0,9.908,42.463v152.36c0,19.52,16.374,35.893,36.518,35.893H70.362v23.936a35.489,35.489,0,0,0,35.893,35.893h152.36a35.49,35.49,0,0,0,35.893-35.893V102.291A35.49,35.49,0,0,0,258.615,66.4Z" fill-rule="evenodd"/><path d="M392.778,222.119a51.322,51.322,0,0,1-19.864-3.616,37.666,37.666,0,0,1-14.6-10.659,48.208,48.208,0,0,1-9.017-17.328,81.981,81.981,0,0,1-3.1-23.621q0-21.978,4.93-39.165t13.383-29.021A60.129,60.129,0,0,1,384.231,80.63a48.661,48.661,0,0,1,23.949-6.246q11.271,0,19.019,3.334a32.879,32.879,0,0,1,12.726,9.439,40.506,40.506,0,0,1,7.185,14.886,84.27,84.27,0,0,1,2.583,19.3L428,125.1a80.786,80.786,0,0,0-1.457-13.336,25.256,25.256,0,0,0-3.71-9.3,15.13,15.13,0,0,0-6.574-5.4,25.479,25.479,0,0,0-10.05-1.738,21.786,21.786,0,0,0-10.331,2.583,31.979,31.979,0,0,0-9.015,7.278,52.187,52.187,0,0,0-7.514,11.412,89.7,89.7,0,0,0-5.636,14.6,117.155,117.155,0,0,0-3.568,17.235,143.819,143.819,0,0,0-1.221,19.018q0,16.907,6.011,25.5t18.032,8.594a22.676,22.676,0,0,0,8.969-1.737,23.085,23.085,0,0,0,7.655-5.494,44.339,44.339,0,0,0,6.762-9.768,107.015,107.015,0,0,0,6.2-14.558l20.475,3.475a116.231,116.231,0,0,1-8.641,20.287,69.546,69.546,0,0,1-11.176,15.309,46.055,46.055,0,0,1-13.9,9.674A40.251,40.251,0,0,1,392.778,222.119Z" /><path d="M466,117.493H487.69l-2.254,14.933h.375a51.4,51.4,0,0,1,5.354-6.48,35.652,35.652,0,0,1,15.309-9.2,36.553,36.553,0,0,1,10.519-1.408h1.878l-3.851,20a3.027,3.027,0,0,0-.892-.141c-.469-.031-.956-.078-1.456-.141-.5,0-.986-.015-1.456-.047s-.8-.047-.986-.047a31.208,31.208,0,0,0-15.966,4.235,33.579,33.579,0,0,0-6.387,4.708,48.059,48.059,0,0,0-5.353,5.93L471.536,219.4H449.653Z" /><path d="M536.762,220.71a28.223,28.223,0,0,1-9.814-1.643,21.7,21.7,0,0,1-12.774-12.3,27.643,27.643,0,0,1-1.925-10.1,34.994,34.994,0,0,1,3.992-17A37.561,37.561,0,0,1,528.028,166.9a69.827,69.827,0,0,1,19.159-8.923,172.182,172.182,0,0,1,26.485-5.729l.751-4.79q1.128-7.326-1.127-10.284t-9.109-2.958a38.412,38.412,0,0,0-15.4,3,65.7,65.7,0,0,0-13.243,7.7l-9.767-14.745A62.822,62.822,0,0,1,546.2,118.808a71.211,71.211,0,0,1,22.024-3.475,47.108,47.108,0,0,1,14.792,1.972,19.443,19.443,0,0,1,9.157,6.011,19.818,19.818,0,0,1,3.945,10.049,50.09,50.09,0,0,1-.564,14.088l-7.325,46.96a139.568,139.568,0,0,0-1.926,15.168,41.2,41.2,0,0,0,.423,9.815H565.219q-.281-1.5-.422-2.818a25.525,25.525,0,0,1-.141-2.723,17.737,17.737,0,0,1,.047-2.866q.141-1.548.516-3.521a63.107,63.107,0,0,1-6.715,6.058,36.4,36.4,0,0,1-6.621,4.086,30.938,30.938,0,0,1-7.091,2.347A40.542,40.542,0,0,1,536.762,220.71Zm9.392-17.469a25.007,25.007,0,0,0,11.177-2.359,42.93,42.93,0,0,0,9.767-6.893l4.038-26.531a135.565,135.565,0,0,0-17.562,4.344,42.971,42.971,0,0,0-11.271,5.381,17.784,17.784,0,0,0-6.1,6.751,18.872,18.872,0,0,0-1.784,8.261q.186,5.286,3.333,8.168A11.973,11.973,0,0,0,546.154,203.241Z" /><path d="M622.249,134.962H607.41l2.912-17.469h14.839l1.878-12.586a53.611,53.611,0,0,1,3.146-11.6,26.7,26.7,0,0,1,5.87-8.969,25.561,25.561,0,0,1,9.44-5.683,41.642,41.642,0,0,1,13.852-2.019q1.878,0,4.086.047t4.179.141q1.973.095,3.382.235a12.108,12.108,0,0,1,1.69.235l-2.912,17.656a5.317,5.317,0,0,0-1.127-.141q-.846-.045-1.878-.14-1.035,0-1.973-.047c-.627-.031-1.1-.048-1.408-.048a37.139,37.139,0,0,0-5.5.376,11.828,11.828,0,0,0-4.367,1.5,9.516,9.516,0,0,0-3.1,3.381,17.191,17.191,0,0,0-1.785,5.729l-1.784,11.928h18.69l-2.912,17.469h-18.6L630.7,219.4h-21.7Z" /><path d="M700.756,220.71a46.908,46.908,0,0,1-14.041-1.737,17.222,17.222,0,0,1-8.217-5.118,15.428,15.428,0,0,1-3.381-8.36,42.8,42.8,0,0,1,.469-11.458l9.2-59.075H669.951l2.912-17.469H687.7l5.541-35.783h21.695L709.4,117.493h22.165l-2.911,17.469H706.486l-8.453,55.187a31.788,31.788,0,0,0-.517,6.685,8.152,8.152,0,0,0,1.268,4.332,6.3,6.3,0,0,0,3.475,2.449,20.841,20.841,0,0,0,6.2.753,37.852,37.852,0,0,0,4.884-.328,21.787,21.787,0,0,0,3.946-.8l-2.724,15.985a18.551,18.551,0,0,1-2.536.555q-1.691.279-3.663.466t-3.991.325Q702.351,220.709,700.756,220.71Z" /><path d="M822.736,221.932a65.725,65.725,0,0,1-19.019-2.443,42.576,42.576,0,0,1-13.76-6.855,38.382,38.382,0,0,1-9.485-10.613,58.607,58.607,0,0,1-6.011-13.807l20-9.016a43.654,43.654,0,0,0,3.9,9.392,27.134,27.134,0,0,0,5.87,7.232,24.8,24.8,0,0,0,8.218,4.649,33.649,33.649,0,0,0,11.035,1.643,33.235,33.235,0,0,0,9.391-1.267,21.821,21.821,0,0,0,7.514-3.8,17.3,17.3,0,0,0,4.837-6.387,22,22,0,0,0,1.737-9.11,16.454,16.454,0,0,0-2.347-8.734,29.905,29.905,0,0,0-6.2-7.138,71.392,71.392,0,0,0-8.782-6.34l-10.1-6.246q-5.166-3.1-10.1-6.668a52.148,52.148,0,0,1-8.781-7.983,37.376,37.376,0,0,1-6.2-9.862,31.282,31.282,0,0,1-2.348-12.491,42.906,42.906,0,0,1,3.616-18.22,38.118,38.118,0,0,1,9.721-13.055,41.035,41.035,0,0,1,13.852-7.8A50.942,50.942,0,0,1,835.6,74.384a53.883,53.883,0,0,1,17.234,2.465,40.073,40.073,0,0,1,12.445,6.636,35.391,35.391,0,0,1,8.312,9.838,56.761,56.761,0,0,1,5.118,11.96l-19.441,9.486a47.975,47.975,0,0,0-3.381-8.218,25.534,25.534,0,0,0-4.79-6.433,20.755,20.755,0,0,0-6.95-4.086,27.989,27.989,0,0,0-9.485-1.456,24.912,24.912,0,0,0-7.89,1.217,17.766,17.766,0,0,0-6.292,3.556,16.132,16.132,0,0,0-4.274,5.895,20.2,20.2,0,0,0-1.549,8.14,15.758,15.758,0,0,0,2.347,8.469,30.131,30.131,0,0,0,6.2,7.063,71.231,71.231,0,0,0,8.781,6.316q4.931,3.042,10.1,6.222t10.1,6.845a55.658,55.658,0,0,1,8.781,8.076,38.584,38.584,0,0,1,6.2,10.05,32.017,32.017,0,0,1,2.347,12.585,44.731,44.731,0,0,1-3.381,17.7,38.1,38.1,0,0,1-9.486,13.478,42.106,42.106,0,0,1-14.745,8.687A57.233,57.233,0,0,1,822.736,221.932Z" /><path d="M911.31,220.71a46.9,46.9,0,0,1-14.041-1.737,17.226,17.226,0,0,1-8.218-5.118,15.428,15.428,0,0,1-3.381-8.36,42.8,42.8,0,0,1,.47-11.458l9.2-59.075H880.5l2.912-17.469h14.839L903.8,81.71h21.7l-5.541,35.783h22.165l-2.911,17.469H917.04l-8.454,55.187a31.846,31.846,0,0,0-.516,6.685,8.152,8.152,0,0,0,1.267,4.332,6.3,6.3,0,0,0,3.476,2.449,20.836,20.836,0,0,0,6.2.753,37.852,37.852,0,0,0,4.884-.328,21.773,21.773,0,0,0,3.945-.8l-2.723,15.985a18.586,18.586,0,0,1-2.536.555q-1.691.279-3.664.466t-3.991.325Q912.905,220.709,911.31,220.71Z" /><path d="M961.645,220.71a28.223,28.223,0,0,1-9.814-1.643,21.7,21.7,0,0,1-12.774-12.3,27.622,27.622,0,0,1-1.925-10.1,34.993,34.993,0,0,1,3.991-17A37.565,37.565,0,0,1,952.911,166.9a69.814,69.814,0,0,1,19.159-8.923,172.156,172.156,0,0,1,26.485-5.729l.751-4.79q1.128-7.326-1.127-10.284t-9.109-2.958a38.421,38.421,0,0,0-15.4,3,65.725,65.725,0,0,0-13.242,7.7l-9.767-14.745a62.828,62.828,0,0,1,20.426-11.364,71.217,71.217,0,0,1,22.025-3.475,47.108,47.108,0,0,1,14.792,1.972,19.443,19.443,0,0,1,9.157,6.011A19.817,19.817,0,0,1,1021,133.365a50.086,50.086,0,0,1-.563,14.088l-7.325,46.96a139.317,139.317,0,0,0-1.926,15.168,41.2,41.2,0,0,0,.423,9.815H990.1q-.28-1.5-.422-2.818a25.266,25.266,0,0,1-.141-2.723,17.846,17.846,0,0,1,.046-2.866q.142-1.548.517-3.521a63.2,63.2,0,0,1-6.715,6.058,36.4,36.4,0,0,1-6.621,4.086,30.938,30.938,0,0,1-7.091,2.347A40.542,40.542,0,0,1,961.645,220.71Zm9.392-17.469a25,25,0,0,0,11.176-2.359,42.912,42.912,0,0,0,9.768-6.893l4.038-26.531a135.626,135.626,0,0,0-17.563,4.344,42.963,42.963,0,0,0-11.27,5.381,17.8,17.8,0,0,0-6.105,6.751A18.886,18.886,0,0,0,959.3,192.2q.186,5.286,3.334,8.168A11.973,11.973,0,0,0,971.037,203.241Z" /><path d="M1044.964,117.493h21.7l-2.254,14.933h.375a51.387,51.387,0,0,1,5.353-6.48,35.663,35.663,0,0,1,15.31-9.2,36.551,36.551,0,0,1,10.518-1.408h1.878l-3.85,20a3.027,3.027,0,0,0-.892-.141q-.7-.047-1.456-.141c-.5,0-.986-.015-1.456-.047s-.8-.047-.986-.047a31.208,31.208,0,0,0-15.966,4.235,33.547,33.547,0,0,0-6.387,4.708,48.059,48.059,0,0,0-5.353,5.93L1050.505,219.4h-21.882Z" /><path d="M1132.524,220.71a46.9,46.9,0,0,1-14.041-1.737,17.226,17.226,0,0,1-8.218-5.118,15.428,15.428,0,0,1-3.381-8.36,42.8,42.8,0,0,1,.47-11.458l9.2-59.075h-14.84l2.912-17.469h14.839l5.541-35.783h21.7l-5.541,35.783h22.165l-2.912,17.469h-22.165l-8.453,55.187a31.846,31.846,0,0,0-.516,6.685,8.144,8.144,0,0,0,1.267,4.332,6.3,6.3,0,0,0,3.476,2.449,20.836,20.836,0,0,0,6.2.753,37.864,37.864,0,0,0,4.884-.328,21.773,21.773,0,0,0,3.945-.8l-2.723,15.985a18.572,18.572,0,0,1-2.537.555q-1.691.279-3.663.466t-3.991.325Q1134.118,220.709,1132.524,220.71Z" /><path d="M1197.932,221.556a41.172,41.172,0,0,1-15.027-2.63,30.677,30.677,0,0,1-11.552-7.795,34.6,34.6,0,0,1-7.42-12.726,54.445,54.445,0,0,1-2.63-17.705,100.219,100.219,0,0,1,1.926-20.473,76.913,76.913,0,0,1,5.307-16.53,56.7,56.7,0,0,1,7.888-12.586,45.891,45.891,0,0,1,9.768-8.828,42.462,42.462,0,0,1,10.895-5.213,37.775,37.775,0,0,1,11.176-1.737q17.187,0,25.64,9.362t8.453,28.649q0,3.557-.329,7.115t-1.08,8.333l-.939,5.991h-57.1a26.347,26.347,0,0,0-.188,3.074v2.882q0,11.724,4.414,17.3t13.243,5.578a21.152,21.152,0,0,0,12.4-3.944,45.4,45.4,0,0,0,10.707-11.083l13.431,11.177a50.264,50.264,0,0,1-17,16.154A43.842,43.842,0,0,1,1197.932,221.556Zm9.768-87.909a18.043,18.043,0,0,0-13.853,6.386q-5.776,6.389-8.782,19.536h37.1a54.4,54.4,0,0,0,.234-10.706,22.637,22.637,0,0,0-2.113-8.172,12.373,12.373,0,0,0-4.743-5.213A15.079,15.079,0,0,0,1207.7,133.647Z" /><path d="M1264.726,117.493h21.695l-2.254,14.933h.375a51.482,51.482,0,0,1,5.354-6.48,35.647,35.647,0,0,1,15.31-9.2,36.541,36.541,0,0,1,10.518-1.408h1.878l-3.851,20a3.018,3.018,0,0,0-.891-.141q-.7-.047-1.456-.141-.753,0-1.456-.047c-.47-.031-.8-.047-.987-.047A31.208,31.208,0,0,0,1293,139.2a33.516,33.516,0,0,0-6.387,4.708,47.987,47.987,0,0,0-5.354,5.93L1270.267,219.4h-21.883Z" /></svg>
+					</a>
+				</div>
+
+				<div class="shrink cell">
+
+					<ul class="menu align-middle align-right md:tw-hidden">
+						<li class="sm:tw-hidden">
+							<a class="tw-block tw-px-2 tw-py-3 tw-mr-2 tw-text-black" href="tel:+1{{ seomatic.site.identity.genericTelephone }}">{{ svg('@webroot/assets/svg/phone.svg')|attr({class:'tw-inline-block tw-h-6 tw-w-6'})|append('<title>Call</title>', 'replace') }}</a>
+						</li>
+						<li>
+							<a class="tw-flex tw-items-center tw-px-2 tw-py-3 tw-leading-none tw-text-black" href="#jsOffCanvasNav" data-open="jsOffCanvasNav">
+								<span class="tw-hidden sm:tw-block tw-uppercase tw-mr-2">Menu</span>
+								{{ svg('@webroot/assets/svg/menu.svg')|attr({class:'tw-block tw-h-6 tw-w-6'})|append('<title>Menu</title>', 'replace') }}
+							</a>
+						</li>
+					</ul>
+
+					<nav class="tw-hidden md:tw-block">
+						<ul class="menu dropdown tw-text-xs" data-dropdown-menu>
+							{% nav page in navigation %}
+								<li> {# {% if entry is defined and (page.isAncestorOf(entry) or (entry.id == page.id)) %} is-active{% endif %} #}
+									<a href="{{page.url}}" class="tw-py-4 tw-uppercase tw-text-gray-800">{{page.title}}</a>
+
+									{% ifchildren %}
+										<ul class="menu">
+											{% children %}
+										</ul>
+									{% endifchildren %}
+								</li>
+							{% endnav %}
+						</ul>
+					</nav>
+
+				</div>
+
+			</div>{# .grid-x #}
+
+		</header>
+
+		{# - Feature ---------------------- #}
+		{% block feature %}{% endblock %}
+
+		{# - Header ---------------------- #}
+		{% block headerImage %}
+
+			{% if headerImageUrl is not defined %}
+				{% if entry is defined and entry.headerImage|length %}
+					{% set headerImageUrl = imgMacros.srcset(entry.headerImage[0]) %}
+				{% else %}
+					{% set headerImageUrl = 'data-src="'~craft.app.config.general.theme.assetsImages~'sample-header.jpg"' %}
+				{% endif %}
+			{% endif %}
+
+			<div class="tw-relative tw-z-0 tw-h-40vh md:tw-h-50vh tw-bg-gray-200">
+				{# <div class="tw-relative tw-z-10"></div> #}
+				{% if headerImageUrl is defined and headerImageUrl != '' %}
+				<img class="tw-absolute tw-w-full tw-h-full tw-left-0 tw-top-0 tw-object-cover tw-object-center tw-z-0 lazyload" {{headerImageUrl|raw}} alt="Background Image">
+				{% endif %}
+			</div>
+
+		{% endblock %}
+
+
+		{# - Content - defaults to a 2 columns layout ---------------------- #}
+		{% block contentWrap %}
+		<div class="tw-relative sm:tw-p-8 tw-pb-16 tw-bg-gray-400 tw-z-10 tw-bg-repeat" style="background-image: url('{{craft.app.config.general.theme.assetsImages}}sample-texture.jpg');">
+			<div class="grid-container tw-p-4 sm:tw-p-8 tw-pb-12 md:tw--mt-24 tw-bg-gray-100 tw-shadow-2xl">
+
+				{# - Main Content and Sidebar ---------------------- #}
+				{% block aboveContent %}{% endblock %}
+				{% block content %}
+				<div class="grid-x grid-padding-x align-top align-justify">
+
+					<div class="cell small-12 large-8">
+						<main>
+							<h1>{% include '_partials/headingOrTitle' %}</h1>
+							{% block aboveMain %}{% endblock %}
+							{% block main %}{% endblock %}
+							{% block belowMain %}{% endblock %}
+						</main>
+					</div>
+
+					<div class="cell small-12 large-3">
+						{% block aboveSidebar %}{% endblock %}
+						{% block sidebar %}
+							{% include '_partials/subnav' %}
+						{% endblock %}
+						{% block belowSidebar %}{% endblock %}
+					</div>
+
+				</div>
+				{% endblock %}
+				{% block belowContent %}{% endblock %}
+
+			</div>{# .grid-container #}
+
+			<div class="tw-py-8 tw-px-2">
+
+				{#
+				<a href="#jsPageTop" id="jsScrollTopArrow" class="button hollow">
+					<span class="show-for-sr">Scroll to Top</span>
+					{{ svg('@webroot/assets/svg/arrow-up.svg')|attr({class:'tw-block tw-w-8 tw-h-8',role:'img'})|append('<title>Scroll to Top</title>', 'replace') }}
+				</a>
+				#}
+
+				<h2 class="tw-mb-6 tw-text-xl tw-text-center tw-font-sans tw-font-bold tw-uppercase tw-tracking-widest tw-text-gray-800">Follow Us</h2>
+
+				<ul class="tw-flex tw-flex-wrap tw-justify-center tw-items-center tw-list-none tw-m-0 tw-mb-8 tw-p-0">
+
+					{% if seomatic.site.sameAsLinks["facebook"]["url"] %}
+					<li class="tw-mx-1 md:tw-mx-4">
+						<a class="tw-block tw-p-3 tw-bg-white tw-rounded-lg tw-text-social-facebook" href="{{ seomatic.site.sameAsLinks["facebook"]["url"] }}" target="_blank">
+							{{ svg('@webroot/assets/svg/social-facebook.svg')|attr({class:'tw-block tw-w-10 tw-h-10'})|append('<title>Facebook</title>', 'replace') }}
+						</a>
+					</li>
+					{% endif %}
+
+					{% if seomatic.site.sameAsLinks["twitter"]["url"] %}
+					<li class="tw-mx-1 md:tw-mx-4">
+						<a class="tw-block tw-p-3 tw-bg-white tw-rounded-lg tw-text-social-twitter" href="{{ seomatic.site.sameAsLinks["twitter"]["url"] }}" target="_blank">
+							{{ svg('@webroot/assets/svg/social-twitter.svg')|attr({class:'tw-block tw-w-10 tw-h-10'})|append('<title>Twitter</title>', 'replace') }}
+						</a>
+					</li>
+					{% endif %}
+
+					{% if seomatic.site.sameAsLinks["instagram"]["url"] %}
+					<li class="tw-mx-1 md:tw-mx-4">
+						<a class="tw-block tw-p-3 tw-bg-white tw-rounded-lg tw-text-social-instagram" href="{{ seomatic.site.sameAsLinks["instagram"]["url"] }}" target="_blank">
+							{{ svg('@webroot/assets/svg/social-instagram.svg')|attr({class:'tw-block tw-w-10 tw-h-10'})|append('<title>Instagram</title>', 'replace') }}
+						</a>
+					</li>
+					{% endif %}
+				</ul>
+			</div>
+
+		</div>{# content wrap #}
+		{% endblock %}
+
+
+		{# - Footer ---------------------- #}
+		<footer class="tw-relative tw-z-0 tw-pb-12 tw-bg-gray-800">
+
+			<address class="tw-not-italic tw-p-8 tw-text-center tw-text-gray-400">
+				{{siteName}}<br>
+				{{ seomatic.site.identity.genericStreetAddress }}<br>
+				{{ seomatic.site.identity.genericAddressLocality }}, {{ seomatic.site.identity.genericAddressRegion }} {{ seomatic.site.identity.genericPostalCode }}<br>
+				Phone: {{ seomatic.site.identity.genericTelephone }}
+			</address>
+
+			<p class="tw-text-center tw-text-xs tw-text-gray-500">&copy;{{ now|date('Y') }} {{ siteName }}, all rights reserved.</p>
+
+		</footer>
+
+	</div>{# - Off Canvas Content  #}
+	</div>{# - Off Canvas Wrapper  #}
+
+	{# - Javascript ----------------------
+	 # In practice, defer is used for scripts that need the whole DOM and/or their relative execution order is important. And async is used for independent scripts, like counters or ads. And their relative execution order does not matter.
+	#}
+	<script src="/assets/js/theme.js{% if not craft.app.config.general.devMode %}?v={{now|date("U")}}{% endif %}" defer></script>
+
+	{# - Other Page Specfic Javascript ---------------------- #}
+	{% block bodyJs %}{% endblock %}
+
+</body>
+</html>
+{# {%- endminify -%} #}{%- endcacheflag -%}

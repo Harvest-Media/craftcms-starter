@@ -1,0 +1,38 @@
+field: b3e1c9f3-7e40-4ec9-9d9d-96fa163a671c
+fieldLayouts:
+  b865571f-7339-4072-8f69-f265dec385d9:
+    tabs:
+      -
+        fields:
+          6802ed0f-5637-414e-8ff1-32ce1ea64f11:
+            required: false
+            sortOrder: 1
+        name: Content
+        sortOrder: 1
+fields:
+  6802ed0f-5637-414e-8ff1-32ce1ea64f11:
+    contentColumnType: text
+    fieldGroup: null
+    handle: calloutText
+    instructions: ''
+    name: 'Callout Text'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      cleanupHtml: true
+      columnType: text
+      purifierConfig: ''
+      purifyHtml: ''
+      redactorConfig: Standard.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+handle: callout
+name: Callout
+sortOrder: 4

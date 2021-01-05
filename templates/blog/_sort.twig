@@ -1,0 +1,127 @@
+{% extends "_layouts/default" %}
+
+
+{# Set a Header Image for the Blog section of the website, if no other header image on an entry is available #}
+{% if entry is not defined %}
+
+	{% set masterBlogPageEntry = craft.entries({
+		section: 'pages',
+		type: 'blogList',
+		with: ['headerImage'],
+		limit: 1
+	}).one() %}
+
+	{% if masterBlogPageEntry and masterBlogPageEntry.headerImage|length %}
+		{% set headerImageUrl = masterBlogPageEntry.headerImage[0].url('headerDefault') %}
+	{% endif %}
+
+{% endif %}
+
+
+
+{% block main %}
+
+	{% set filter = craft.app.request.getSegment(2) %}
+	{% set filterSlug = craft.app.request.getSegment(3) %}
+
+	{% if filter is defined and filterSlug is defined %}
+
+		{# Get Posts by Month #}
+		{% if filter == 'month' %}
+
+			{% set filterYear = craft.app.request.getSegment(3)  %}
+			{% set filterMonth = craft.app.request.getSegment(4) %}
+			{% set filterDate = date(filterYear ~ '-' ~ filterMonth) %}
+			{% set posts = craft.entries({
+				section: 'blog',
+				limit: 15,
+				after: filterDate,
+				before: filterDate|date_modify("+1 month"),
+				orderBy: 'postDate desc',
+				with: [
+					'headerImage'
+				]
+			}) %}
+
+			{% paginate posts as entries %}
+
+			{% set dateHeading = 'Posts from ' ~ filterDate|date('F, Y') %}
+
+			<h1>{{dateHeading}}</h1>
+
+			{% for entry in posts %}
+				<hr>
+				<div class="media-object tw-py-4">
+					<div class="media-object-section">
+						{% if entry.headerImage|length %}
+							<div class="thumbnail">
+								<a href="{{ entry.url }}">
+									<img src="{{ entry.headerImage[0].getUrl('contentBlockFeaturedSermonSeries') }}" alt="{{ entry.title }}">
+								</a>
+							</div>
+						{% endif %}
+					</div>
+					<div class="media-object-section main-section">
+						<h2 class="tw-font-sans tw-font-bold tw-text-2xl"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+						<p class="tw-text-xs tw-mb-0 tw-italic tw-opacity-75">On {{ entry.postDate.format('F j, Y') }} by {{entry.author}}</p>
+						<p class="tw-mb-2 tw-text-xs tw-italic">{{entry.preview}} ... <a href="{{entry.url}}">read more</a></p>
+					</div>
+				</div>
+			{% endfor %}
+
+
+			{# - Pagination ------------------------ #}
+			{% if paginate.totalPages > 1 %}
+
+			<nav class="pagination-centered">
+				<ul class="pagination tw-text-center">
+					<li>
+						<a href="{{ paginate.firstUrl }}" title="First Page">&lsaquo; First</a>
+					</li>
+
+					{% if paginate.prevUrl %}
+						<li class="pagination-previous">
+							<a href="{{ paginate.prevUrl }}">Previous</a>
+						</li>
+					{% endif %}
+
+					{% for page, url in paginate.getPrevUrls(5) %}
+						<li>
+							<a href="{{ url }}">{{ page }}</a>
+						</li>
+					{% endfor %}
+
+					<li class="current">
+						{{ paginate.currentPage }}{#<a href="{{ paginate.getPageUrl(paginate.currentPage) }}"></a>#}
+					</li>
+
+					{% for page, url in paginate.getNextUrls(5) %}
+						<li>
+							<a href="{{ url }}">{{ page }}</a>
+						</li>
+					{% endfor %}
+
+					{% if paginate.nextUrl %}
+						<li class="pagination-next">
+							<a href="{{ paginate.nextUrl }}">Next</a>
+						</li>
+					{% endif %}
+
+					<li>
+						<a href="{{ paginate.lastUrl }}" title="Last Page">Last &rsaquo;</a>
+					</li>
+				</ul>
+			</nav>
+
+			{% endif %}
+
+		{% endif %}
+
+	{% endif %}
+
+{% endblock %}
+
+
+{% block sidebar %}
+	{% include '_partials/blogSidebarArchive' %}
+{% endblock %}

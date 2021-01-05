@@ -1,0 +1,10 @@
+field: b3e1c9f3-7e40-4ec9-9d9d-96fa163a671c
+fieldLayouts:
+  3b9df2d8-6bf2-47c2-ba0a-52c44b514a12:
+    tabs:
+      -
+        name: Content
+        sortOrder: 1
+handle: separator
+name: Separator
+sortOrder: 5

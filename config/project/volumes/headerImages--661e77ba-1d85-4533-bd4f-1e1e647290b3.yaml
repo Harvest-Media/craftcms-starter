@@ -1,0 +1,9 @@
+handle: headerImages
+hasUrls: true
+name: 'Header Images'
+settings:
+  path: media/images_headers/
+  url: /media/images_headers/
+sortOrder: 3
+type: craft\volumes\Local
+url: null

@@ -1,0 +1,124 @@
+{% extends "_layouts/default" %}
+
+{% block content %}
+
+<main>
+	<div class="tw-text-center">
+		<h1>{% include '_partials/headingOrTitle' %}</h1>
+		{{entry.body}}
+		<hr class="tw-mx-auto tw-w-1/2 tw-opacity-50">
+	</div>
+
+  {# - Categories ---------------------- #}
+	{#
+  {% set categories = craft.entries({
+		section: 'categories'
+	}).all() %}
+  {% if categories|length %}
+    <ul class="menu align-center align-middle">
+      <li class="menu-text">Topics:</li>
+      {% nav category in categories %}
+      <li>
+        <strong><a href="{{ category.url }}">{{ category.title }}</a></strong>
+        {% ifchildren %}
+          <ul>
+            {% children %}
+          </ul>
+        {% endifchildren %}
+      </li>
+      {% endnav %}
+    </ul>
+  {% endif %}
+
+  <hr class="tw-mx-auto tw-w-1/2">
+	#}
+
+  {% set posts = craft.entries({
+  	section: 'blog',
+  	with: ['headerImage'],
+  	limit: 20,
+  	orderBy: 'postDate desc'
+  }) %}
+
+  {% paginate posts as entries %}
+
+  {% if posts|length %}
+
+		<div class="grid-x grid-padding-x grid-padding-y">
+
+    {# - Post ---------------------- #}
+    {% for entry in posts %}
+			{% set thumb = {
+        mode: 'crop',
+        width: 800,
+        height: 500,
+        quality: 75,
+        position: 'center-center'} %}
+
+      <div class="cell medium-6 large-4">
+        <article class="thumbnail tw-bg-white">
+					{% if entry.headerImage|length %}<img src="{{entry.headerImage[0].url(thumb)}}" class="tw-block tw-mb-2 jsClickForHref" alt="Article - {{entry.title}}" data-href="{{entry.url}}">{% endif %}
+          <h2 class="tw-text-sm tw-font-sans tw-px-2 tw-mb-2 tw-leading-tight">
+						<a href="{{entry.url}}">{{entry.title}}</a>
+					</h2>
+          <p class="tw-text-xs tw-px-2 tw-mb-2 tw-leading-normal">{{entry.preview}}</p>
+          <p class="tw-text-xs tw-px-2 tw-mb-0 tw-italic">Posted {{entry.postDate|date("M j 'y")}}</p>
+          <p class="tw-p-2 tw-mb-0"><a href="{{entry.url}}" class="button small tw-mb-0">Read More</a></p>
+        </article>
+      </div>
+
+    {% endfor %}
+
+	</div>{# .grid-x #}
+
+  {% endif %}
+
+
+	{# - Pagination ------------------------ #}
+	{% if paginate.totalPages > 1 %}
+
+	<nav class="pagination-centered">
+	  <ul class="pagination tw-text-center">
+	    <li>
+	      <a href="{{ paginate.firstUrl }}" title="First Page">&lsaquo; First</a>
+	    </li>
+
+	    {% if paginate.prevUrl %}
+	      <li class="pagination-previous">
+	        <a href="{{ paginate.prevUrl }}">Previous</a>
+	      </li>
+	    {% endif %}
+
+	    {% for page, url in paginate.getPrevUrls(5) %}
+	      <li>
+	        <a href="{{ url }}">{{ page }}</a>
+	      </li>
+	    {% endfor %}
+
+	    <li class="current">
+	      {{ paginate.currentPage }}{#<a href="{{ paginate.getPageUrl(paginate.currentPage) }}"></a>#}
+	    </li>
+
+	    {% for page, url in paginate.getNextUrls(5) %}
+	      <li>
+	        <a href="{{ url }}">{{ page }}</a>
+	      </li>
+	    {% endfor %}
+
+	    {% if paginate.nextUrl %}
+	      <li class="pagination-next">
+	        <a href="{{ paginate.nextUrl }}">Next</a>
+	      </li>
+	    {% endif %}
+
+	    <li>
+	      <a href="{{ paginate.lastUrl }}" title="Last Page">Last &rsaquo;</a>
+	    </li>
+	  </ul>
+	</nav>
+
+	{% endif %}
+
+</main>
+
+{% endblock %}

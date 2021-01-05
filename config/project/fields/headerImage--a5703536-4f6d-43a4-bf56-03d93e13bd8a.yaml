@@ -1,0 +1,21 @@
+contentColumnType: string
+fieldGroup: 7025c78b-3031-405b-9845-6889983aae90
+handle: headerImage
+instructions: ''
+name: 'Header Image'
+searchable: true
+settings:
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:9cd3f5a6-0ca2-4b63-bd42-1aed0168e5a2'
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  restrictFiles: '1'
+  singleUploadLocationSource: 'volume:661e77ba-1d85-4533-bd4f-1e1e647290b3'
+  singleUploadLocationSubpath: ''
+  sources: '*'
+  useSingleFolder: '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Assets
