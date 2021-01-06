@@ -3,8 +3,13 @@ handle: pages
 name: Navigation
 previewTargets:
   -
-    label: 'Primary entry page'
-    urlFormat: '{url}'
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
 propagationMethod: all
 siteSettings:
   ae98859a-dab4-4af3-b70d-780ede8c6184:

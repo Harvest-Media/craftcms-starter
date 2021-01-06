@@ -3,13 +3,25 @@ fieldLayouts:
   809d3220-659e-412f-9cd8-32cbd7966cb1:
     tabs:
       -
-        fields:
-          f2d42740-37fa-4bd4-8485-18aca3ab0bd7:
-            required: false
-            sortOrder: 2
-          fe5aa513-4011-41dc-b3c4-f6398009232d:
-            required: false
-            sortOrder: 1
+        elements:
+          -
+            fieldUid: fe5aa513-4011-41dc-b3c4-f6398009232d
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: f2d42740-37fa-4bd4-8485-18aca3ab0bd7
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -96,6 +108,7 @@ fields:
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText

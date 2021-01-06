@@ -4,13 +4,37 @@ fieldLayouts:
       -
         elements:
           -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
             instructions: null
-            label: Title
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
             type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
           -
             fieldUid: ae5298d0-8399-442c-a5c6-5d45859b79af
-            required: false
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
             type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 handle: sermonCategories
@@ -18,4 +42,6 @@ hasTitleField: true
 name: 'Sermon Categories'
 section: be3de0b5-6469-4de4-a45f-7ca0c1324b4b
 sortOrder: 1
-titleFormat: ''
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

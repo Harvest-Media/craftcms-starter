@@ -5,20 +5,29 @@ instructions: ''
 name: Image
 searchable: true
 settings:
+  allowSelfRelations: false
+  allowUploads: true
   allowedKinds:
     - image
   defaultUploadLocationSource: 'volume:da05715e-f118-4c6e-b946-1b87d681d043'
   defaultUploadLocationSubpath: ''
   limit: '1'
   localizeRelations: false
+  previewMode: full
   restrictFiles: '1'
   selectionLabel: 'Choose Image'
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: true
   singleUploadLocationSource: 'volume:da05715e-f118-4c6e-b946-1b87d681d043'
   singleUploadLocationSubpath: ''
+  source: null
   sources:
     - 'volume:da05715e-f118-4c6e-b946-1b87d681d043'
-  useSingleFolder: '1'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: false
   viewMode: list
 translationKeyFormat: null
-translationMethod: none
+translationMethod: site
 type: craft\fields\Assets

@@ -1,9 +1,38 @@
+fieldLayouts:
+  85919dbe-93c2-4025-9b75-e00ebb968547:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
 handle: headerImages
 hasUrls: true
 name: 'Header Images'
 settings:
   path: media/images_headers/
-  url: /media/images_headers/
 sortOrder: 3
 type: craft\volumes\Local
-url: null
+url: /media/images_headers/

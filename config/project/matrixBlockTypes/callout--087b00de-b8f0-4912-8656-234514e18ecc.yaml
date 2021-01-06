@@ -3,10 +3,16 @@ fieldLayouts:
   b865571f-7339-4072-8f69-f265dec385d9:
     tabs:
       -
-        fields:
-          6802ed0f-5637-414e-8ff1-32ce1ea64f11:
-            required: false
-            sortOrder: 1
+        elements:
+          -
+            fieldUid: 6802ed0f-5637-414e-8ff1-32ce1ea64f11
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -22,14 +28,19 @@ fields:
       availableVolumes: '*'
       cleanupHtml: true
       columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
       purifierConfig: ''
       purifyHtml: ''
       redactorConfig: Standard.json
       removeEmptyTags: '1'
       removeInlineStyles: '1'
       removeNbsp: '1'
+      showHtmlButtonForNonAdmins: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
+      uiMode: enlarged
     translationKeyFormat: null
     translationMethod: none
     type: craft\redactor\Field

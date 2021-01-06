@@ -3,22 +3,52 @@ fieldLayouts:
   05211cbb-92d6-4528-a3cf-a6a9d8b29cab:
     tabs:
       -
-        fields:
-          41531fb7-c36b-4fca-ba83-8da488093316:
-            required: false
-            sortOrder: 4
-          8ebe90b3-8e91-46f9-96dc-06ff6f471a49:
-            required: false
-            sortOrder: 1
-          97e7ae49-b984-43a3-b5b6-4194bb89c4a4:
-            required: false
-            sortOrder: 3
-          a0d8ffcc-33b9-4947-9275-5c54f33e7d4a:
-            required: false
-            sortOrder: 5
-          d39c4b00-2221-4cae-ab8b-1780422617e0:
-            required: false
-            sortOrder: 2
+        elements:
+          -
+            fieldUid: 8ebe90b3-8e91-46f9-96dc-06ff6f471a49
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: d39c4b00-2221-4cae-ab8b-1780422617e0
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 97e7ae49-b984-43a3-b5b6-4194bb89c4a4
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 41531fb7-c36b-4fca-ba83-8da488093316
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a0d8ffcc-33b9-4947-9275-5c54f33e7d4a
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -37,6 +67,7 @@ fields:
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -48,14 +79,18 @@ fields:
     name: Image
     searchable: true
     settings:
+      allowSelfRelations: false
+      allowUploads: true
       allowedKinds:
         - image
       defaultUploadLocationSource: 'volume:da05715e-f118-4c6e-b946-1b87d681d043'
       defaultUploadLocationSubpath: ''
       limit: '1'
       localizeRelations: false
+      previewMode: full
       restrictFiles: '1'
       selectionLabel: 'Choose Image'
+      showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
       singleUploadLocationSource: 'volume:da05715e-f118-4c6e-b946-1b87d681d043'
@@ -66,7 +101,7 @@ fields:
         - 'volume:da05715e-f118-4c6e-b946-1b87d681d043'
       targetSiteId: null
       useSingleFolder: true
-      validateRelatedElements: ''
+      validateRelatedElements: false
       viewMode: large
     translationKeyFormat: null
     translationMethod: site
@@ -86,6 +121,7 @@ fields:
       initialRows: '4'
       multiline: ''
       placeholder: ''
+      uiMode: normal
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\PlainText
@@ -284,7 +320,9 @@ fields:
     name: Border
     searchable: true
     settings:
-      default: '1'
+      default: true
+      offLabel: null
+      onLabel: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch

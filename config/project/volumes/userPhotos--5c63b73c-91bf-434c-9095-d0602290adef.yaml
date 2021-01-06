@@ -1,3 +1,33 @@
+fieldLayouts:
+  c81d6181-e7ab-4587-bd9c-5d603135f2af:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
 handle: userPhotos
 hasUrls: false
 name: 'User Photos'

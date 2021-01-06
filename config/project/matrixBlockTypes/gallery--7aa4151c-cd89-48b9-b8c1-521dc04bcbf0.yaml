@@ -3,13 +3,25 @@ fieldLayouts:
   9af988b6-a529-4ee7-89d2-fc7d02d24f72:
     tabs:
       -
-        fields:
-          aad8061a-3033-4a2c-be24-a690c2f48426:
-            required: false
-            sortOrder: 1
-          caa54966-219c-4c07-89f7-5cc57a3cb6a4:
-            required: false
-            sortOrder: 2
+        elements:
+          -
+            fieldUid: aad8061a-3033-4a2c-be24-a690c2f48426
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: caa54966-219c-4c07-89f7-5cc57a3cb6a4
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 fields:
@@ -21,14 +33,18 @@ fields:
     name: Images
     searchable: true
     settings:
+      allowSelfRelations: false
+      allowUploads: true
       allowedKinds:
         - image
       defaultUploadLocationSource: 'volume:da05715e-f118-4c6e-b946-1b87d681d043'
       defaultUploadLocationSubpath: ''
       limit: '12'
       localizeRelations: false
+      previewMode: full
       restrictFiles: '1'
       selectionLabel: 'Choose Images'
+      showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: true
       singleUploadLocationSource: 'volume:da05715e-f118-4c6e-b946-1b87d681d043'
@@ -38,7 +54,7 @@ fields:
         - 'volume:da05715e-f118-4c6e-b946-1b87d681d043'
       targetSiteId: null
       useSingleFolder: true
-      validateRelatedElements: ''
+      validateRelatedElements: false
       viewMode: large
     translationKeyFormat: null
     translationMethod: site
@@ -51,7 +67,9 @@ fields:
     name: 'Hide Image Borders'
     searchable: true
     settings:
-      default: ''
+      default: false
+      offLabel: null
+      onLabel: null
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Lightswitch

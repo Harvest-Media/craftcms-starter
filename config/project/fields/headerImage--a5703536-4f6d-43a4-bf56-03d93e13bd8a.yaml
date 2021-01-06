@@ -5,17 +5,28 @@ instructions: ''
 name: 'Header Image'
 searchable: true
 settings:
+  allowSelfRelations: false
+  allowUploads: true
   allowedKinds:
     - image
   defaultUploadLocationSource: 'volume:9cd3f5a6-0ca2-4b63-bd42-1aed0168e5a2'
   defaultUploadLocationSubpath: ''
   limit: '1'
   localizeRelations: false
+  previewMode: full
   restrictFiles: '1'
+  selectionLabel: null
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: true
   singleUploadLocationSource: 'volume:661e77ba-1d85-4533-bd4f-1e1e647290b3'
   singleUploadLocationSubpath: ''
+  source: null
   sources: '*'
-  useSingleFolder: '1'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: false
+  viewMode: null
 translationKeyFormat: null
-translationMethod: none
+translationMethod: site
 type: craft\fields\Assets

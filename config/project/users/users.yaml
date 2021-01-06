@@ -1,7 +1,5 @@
 allowPublicRegistration: false
 defaultGroup: null
-fieldLayouts:
-  5e6d8348-6917-41a2-b149-7925b26f7fe0: null
 photoSubpath: ''
 photoVolumeUid: null
 requireEmailVerification: true
