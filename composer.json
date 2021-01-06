@@ -42,7 +42,7 @@
     "post-create-project-cmd": [
       "@php -r \"copy('.env.example', '.env');\"",
       "@composer dump-autoload -o",
-      "@php craft setup"
+      "@php craft setup/welcome"
     ]
   }
 }
