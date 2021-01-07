@@ -1,5 +1,5 @@
 fieldLayouts:
-  93350ce1-c9d8-4ceb-a0c4-975c551d40ca:
+  7fe6e489-1d1b-4ab8-9227-dc6e7a0156b9:
     tabs:
       -
         elements:
@@ -26,22 +26,19 @@ fieldLayouts:
             type: craft\fieldlayoutelements\TitleField
             warning: null
             width: 100
-          -
-            fieldUid: 8aba3462-e9e0-4edb-b9d8-57a44c8980e5
-            instructions: null
-            label: null
-            required: '0'
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 100
         name: Content
         sortOrder: 1
-handle: images
+handle: siteImages
 hasUrls: true
-name: Images
+name: 'Site Images'
 settings:
-  path: media/images/
-sortOrder: 2
-type: craft\volumes\Local
-url: /media/images/
+  bucket: $OBJECT_STORAGE_BUCKET
+  endpoint: $OBJECT_STORAGE_SERVER
+  expires: ''
+  keyId: $OBJECT_STORAGE_KEY
+  region: $OBJECT_STORAGE_REGION
+  secret: $OBJECT_STORAGE_SECRET
+  subfolder: $OBJECT_STORAGE_BUCKET_SITE_IMAGES
+sortOrder: 11
+type: fortrabbit\ObjectStorage\Volume
+url: $OBJECT_STORAGE_BASE_URL

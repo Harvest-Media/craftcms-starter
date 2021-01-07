@@ -41,58 +41,64 @@ return [
         // The secure key Craft will use for hashing and encrypting data
         'securityKey' => getenv('SECURITY_KEY'),
 
-        // Whether to save the project config out to config/project.yaml
-        // (see https://docs.craftcms.com/v3/project-config.html)
-        'useProjectConfigFile' => false,
-
         // Caching
-    		'enableTemplateCaching' => true,
-    		'cacheDuration' => false,
-    		'cacheElementQueries' => false,
+        'enableTemplateCaching' => true,
+        'cacheDuration' => false,
+        'cacheElementQueries' => false,
 
         // File Uploads
-    		'maxUploadFileSize' => (1048576 * 100), // 100 MB
+        'maxUploadFileSize' => (1048576 * 100), // 100 MB
 
-    		// Security
-    		'enableCsrfProtection' => true,
-    		'preventUserEnumeration' => true,
-        'allowAdminChanges' => (bool)getenv('ALLOW_ADMIN_CHANGES'),
+        // Security
+        'enableCsrfProtection' => true,
+        'preventUserEnumeration' => true,
+        //'allowAdminChanges' => (bool)getenv('ALLOW_ADMIN_CHANGES'),
 
         // Site Name and Url
         'siteName' => array(
           'en_us' => getenv('EN_US_SITE_NAME'),
         ),
-        'siteUrl' => array(
-          'en_us' => getenv('EN_US_SITE_URL')
-        ),
 
-    		// Custom Config Variables to use in Twig Templates
-    		'theme' => [
-          'assets' => getenv('THEME_ASSET_URL'),
-          'assetsImages' => getenv('THEME_ASSET_IMAGES'),
-          'assetsCss' => getenv('THEME_ASSET_CSS'),
-          'assetsJs' => getenv('THEME_ASSET_JS'),
-          'assetsSvg' => getenv('THEME_ASSET_SVG'),
+        // Custom Config Variables to use in Twig Templates
+        'theme' => [
+            'assets' => getenv('THEME_ASSET_URL'),
+            'assetsImages' => getenv('THEME_ASSET_IMAGES'),
+            'assetsCss' => getenv('THEME_ASSET_CSS'),
+            'assetsJs' => getenv('THEME_ASSET_JS'),
+            'assetsSvg' => getenv('THEME_ASSET_SVG'),
         ],
     ],
 
     // Dev environment settings
     'dev' => [
+
+        'siteUrl' => array(
+            'en_us' => getenv('EN_US_SITE_DEV_URL')
+        ),
+
         // Dev Mode (see https://craftcms.com/guides/what-dev-mode-does)
         'devMode' => true,
         'userSessionDuration' => false,
-    		'enableTemplateCaching' => false,
-    		'cacheMethod' => 'file',
-    		'backupOnUpdate' => false,
+        'enableTemplateCaching' => false,
+        'cacheMethod' => 'file',
+        'backupOnUpdate' => false,
+        'allowAdminChanges' => true,
     ],
 
     // Staging environment settings
     'staging' => [
-      // '' => '',
+        'siteUrl' => array(
+            'en_us' => getenv('EN_US_SITE_STAGING_URL')
+        ),
+        'allowAdminChanges' => true,
     ],
 
     // Production environment settings
     'production' => [
-      // '' => '',
+        'siteUrl' => array(
+            'en_us' => getenv('EN_US_SITE_PRODUCTION_URL')
+        ),
+
+        'allowAdminChanges' => false,
     ],
 ];

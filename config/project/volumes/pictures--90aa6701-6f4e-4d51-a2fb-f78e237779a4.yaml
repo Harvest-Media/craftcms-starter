@@ -1,5 +1,5 @@
 fieldLayouts:
-  85919dbe-93c2-4025-9b75-e00ebb968547:
+  54e49c0a-2f85-42de-bf1e-d4cbc41575e0:
     tabs:
       -
         elements:
@@ -28,11 +28,17 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-handle: headerImages
+handle: pictures
 hasUrls: true
-name: 'Header Images'
+name: Pictures
 settings:
-  path: media/images_headers/
-sortOrder: 3
-type: craft\volumes\Local
-url: /media/images_headers/
+  bucket: $OBJECT_STORAGE_BUCKET
+  endpoint: $OBJECT_STORAGE_SERVER
+  expires: ''
+  keyId: $OBJECT_STORAGE_KEY
+  region: $OBJECT_STORAGE_REGION
+  secret: $OBJECT_STORAGE_SECRET
+  subfolder: $OBJECT_STORAGE_BUCKET_PICTURES
+sortOrder: 16
+type: fortrabbit\ObjectStorage\Volume
+url: $OBJECT_STORAGE_BASE_URL

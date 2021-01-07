@@ -1,5 +1,5 @@
 fieldLayouts:
-  c81d6181-e7ab-4587-bd9c-5d603135f2af:
+  623bdbcf-a1c7-477f-b2ed-8e5e5256378e:
     tabs:
       -
         elements:
@@ -28,11 +28,17 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-handle: userPhotos
-hasUrls: false
-name: 'User Photos'
+handle: sermons
+hasUrls: true
+name: Sermons
 settings:
-  path: '@storage/userphotos'
-sortOrder: 10
-type: craft\volumes\Local
-url: null
+  bucket: $OBJECT_STORAGE_BUCKET
+  endpoint: $OBJECT_STORAGE_SERVER
+  expires: ''
+  keyId: $OBJECT_STORAGE_KEY
+  region: $OBJECT_STORAGE_REGION
+  secret: $OBJECT_STORAGE_SECRET
+  subfolder: $OBJECT_STORAGE_BUCKET_SERMONS
+sortOrder: 15
+type: fortrabbit\ObjectStorage\Volume
+url: $OBJECT_STORAGE_BASE_URL

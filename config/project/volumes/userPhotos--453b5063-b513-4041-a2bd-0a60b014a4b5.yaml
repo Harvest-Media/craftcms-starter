@@ -1,5 +1,5 @@
 fieldLayouts:
-  f18bd3e8-6bcf-4d7b-ab68-e976997962b7:
+  b5b2a8f7-8af9-41a4-b7b7-d97e4214bb07:
     tabs:
       -
         elements:
@@ -28,11 +28,17 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-handle: documents
+handle: userPhotos
 hasUrls: true
-name: Documents
+name: 'User Photos'
 settings:
-  path: media/docs/
-sortOrder: 5
-type: craft\volumes\Local
-url: /media/docs/
+  bucket: $OBJECT_STORAGE_BUCKET
+  endpoint: $OBJECT_STORAGE_SERVER
+  expires: ''
+  keyId: $OBJECT_STORAGE_KEY
+  region: $OBJECT_STORAGE_REGION
+  secret: $OBJECT_STORAGE_SECRET
+  subfolder: $OBJECT_STORAGE_BUCKET_USER_PHOTOS
+sortOrder: 14
+type: fortrabbit\ObjectStorage\Volume
+url: $OBJECT_STORAGE_BASE_URL

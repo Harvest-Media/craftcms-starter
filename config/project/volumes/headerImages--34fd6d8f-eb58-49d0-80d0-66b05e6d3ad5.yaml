@@ -1,0 +1,44 @@
+fieldLayouts:
+  6f02cf99-3d60-4514-9e6e-ecf2c4485694:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: headerImages
+hasUrls: true
+name: 'Header Images'
+settings:
+  bucket: $OBJECT_STORAGE_BUCKET
+  endpoint: $OBJECT_STORAGE_SERVER
+  expires: ''
+  keyId: $OBJECT_STORAGE_KEY
+  region: $OBJECT_STORAGE_REGION
+  secret: $OBJECT_STORAGE_SECRET
+  subfolder: $OBJECT_STORAGE_BUCKET_HEADER_IMAGES
+sortOrder: 12
+type: fortrabbit\ObjectStorage\Volume
+url: $OBJECT_STORAGE_BASE_URL
